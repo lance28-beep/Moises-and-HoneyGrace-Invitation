@@ -55,13 +55,13 @@ export function Registry() {
         </div>
         
         <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
-          Monetary Gifts
+          Gifts
         </h2>
         
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed px-2">
           We are deeply appreciative of the prayers, love, time, and effort you’ll dedicate to joining us on our special day. 
           Should you wish to bestow us a gift, monetary gifts toward our new journey together would be greatly valued as we begin building our future.
-          For your convenience, we’ve made options available through PayMaya, GCash, and MetroBank                   .
+                        .
         </p>
         
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">

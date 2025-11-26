@@ -521,7 +521,9 @@ export function GuestList() {
                       <div className="grid grid-cols-2 gap-1.5 sm:gap-2 md:gap-3">
                         <button
                           type="button"
-                          onClick={() => setFormData((prev) => ({ ...prev, RSVP: "Yes" }))}
+                          onClick={() =>
+                            setFormData((prev) => ({ ...prev, RSVP: "Yes", Guest: "1" }))
+                          }
                           className={`relative p-2 sm:p-2.5 md:p-3 lg:p-4 rounded-lg border-2 transition-all duration-300 ${
                             formData.RSVP === "Yes"
                               ? "border-green-500 bg-green-50 shadow-md scale-105"
@@ -572,25 +574,7 @@ export function GuestList() {
                       </div>
                     </div>
 
-                    {/* Number of Guests - Only show when RSVP is "Yes" */}
-                    {formData.RSVP === "Yes" && (
-                      <div>
-                        <label className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#A78256] mb-1.5 sm:mb-2 font-sans">
-                          <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#A78256] flex-shrink-0" />
-                          <span>Number of Guests *</span>
-                        </label>
-                        <input
-                          type="number"
-                          name="Guest"
-                          value={formData.Guest}
-                          onChange={handleFormChange}
-                          min="1"
-                          required
-                          placeholder="How many guests?"
-                          className="w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#C2D3C3]/40 focus:border-[#A78256] rounded-lg text-xs sm:text-sm font-sans text-[#A78256] placeholder:text-[#B28383]/50 transition-all duration-300 focus:ring-2 focus:ring-[#A78256]/20 bg-white"
-                        />
-                      </div>
-                    )}
+                    {/* Guest count defaults to one; no input needed */}
 
                     {/* Message to the couple */}
                     <div>
