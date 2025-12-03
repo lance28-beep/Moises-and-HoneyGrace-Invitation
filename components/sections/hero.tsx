@@ -459,7 +459,9 @@ export function Hero() {
                 textShadow: "0 2px 8px rgba(0,0,0,0.7)",
               }}
             >
-              We do always and forevermore
+              We do
+              <br />
+              always and forever.
             </h1>
             <h1
               className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-2xl"
