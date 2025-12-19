@@ -1,9 +1,9 @@
 export const siteConfig = {
   couple: {
     bride: "Jhessa May N. Eugenio",
-    brideNickname: "Jhessa May",
+    brideNickname: "Jhe",
     groom: "Al Josef Rai A. Tan",
-    groomNickname: "Al Josef",
+    groomNickname: "Al",
   },
   wedding: {
     date: "March 06, 2026",
