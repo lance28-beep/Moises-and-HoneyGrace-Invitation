@@ -183,18 +183,17 @@ export function Countdown() {
         >
           <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] opacity-90">
             <Image
-              src="/monogram/monogramnew.png"
+              src="/monogram/monograam.png"
               alt={`${brideNickname} & ${groomNickname} Monogram`}
               fill
               className="object-contain"
-              style={{
-                filter:
-                  "brightness(0) invert(1) drop-shadow(0 0 22px rgba(255,255,255,0.7)) drop-shadow(0 0 38px rgba(255,255,255,0.45)) drop-shadow(0 10px 20px rgba(0,0,0,0.45))",
-              }}
               priority={false}
+              style={{
+                filter: "brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(1200%) hue-rotate(5deg) brightness(110%) contrast(95%) drop-shadow(0 0 8px rgba(248, 228, 139, 0.4)) drop-shadow(0 0 16px rgba(248, 228, 139, 0.3)) drop-shadow(0 0 24px rgba(248, 228, 139, 0.2))",
+              }}
             />
             {/* Glow effect behind monogram */}
-            <div className="absolute inset-0 blur-3xl bg-white/25 -z-10 scale-125" />
+            <div className="absolute inset-0 blur-3xl bg-[#F8E48B]/20 -z-10 scale-125" />
           </div>
         </motion.div>
       </div>

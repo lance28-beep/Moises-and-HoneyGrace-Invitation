@@ -50,14 +50,19 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       <div className="relative flex flex-col items-center justify-center px-4 sm:px-8">
         {/* Monogram Logo */}
         <div className="relative flex items-center justify-center mb-8 sm:mb-12">
-          <div className="relative w-28 sm:w-40 h-28 sm:h-40 brightness-0 invert">
+          <div className="relative w-28 sm:w-40 h-28 sm:h-40">
             <Image
-              src="/monogram/monogramnew.png"
+              src="/monogram/monograam.png"
               alt="Nathaniel & Jasmin Monogram"
               fill
               className="object-contain"
               priority
+              style={{
+                filter: "brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(1200%) hue-rotate(5deg) brightness(110%) contrast(95%) drop-shadow(0 0 6px rgba(248, 228, 139, 0.5)) drop-shadow(0 0 12px rgba(248, 228, 139, 0.35)) drop-shadow(0 0 18px rgba(248, 228, 139, 0.25))",
+              }}
             />
+            {/* Subtle gold glow behind monogram */}
+            <div className="absolute inset-0 blur-2xl bg-[#F8E48B]/15 -z-10 scale-125" />
           </div>
         </div>
 

@@ -76,15 +76,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
         {/* Top Logo/Monogram */}
         <div className="mb-auto mt-8">
           <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center">
-            {/* Monogram Image - White version */}
-            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 brightness-0 invert">
+            {/* Monogram Image */}
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44">
               <Image
-                src="/monogram/monogramnew.png"
+                src="/monogram/monograam.png"
                 alt="Nathaniel & Jasmin Monogram"
                 fill
                 className="object-contain"
                 priority
+                style={{
+                  filter: "brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(1200%) hue-rotate(5deg) brightness(110%) contrast(95%) drop-shadow(0 0 6px rgba(248, 228, 139, 0.5)) drop-shadow(0 0 12px rgba(248, 228, 139, 0.35)) drop-shadow(0 0 18px rgba(248, 228, 139, 0.25))",
+                }}
               />
+              {/* Subtle gold glow behind monogram */}
+              <div className="absolute inset-0 blur-2xl bg-[#F8E48B]/15 -z-10 scale-125" />
             </div>
           </div>
         </div>
