@@ -278,14 +278,15 @@ export function Countdown() {
                     <div className="relative flex items-center justify-center px-3 sm:px-4 md:px-5">
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-white/40 via-white/25 to-transparent blur-[30px] opacity-85"
+                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-[#F8E48B]/40 via-[#F8E48B]/25 to-transparent blur-[30px] opacity-85"
                       />
                       <span
-                        className={`${cinzel.className} relative text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6rem] font-bold leading-none tracking-wider text-white`}
+                        className={`${cinzel.className} relative text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6rem] font-bold leading-none tracking-wider`}
                         style={{
+                          color: "#F8E48B",
                           textShadow:
-                            "0 0 22px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 6px 20px rgba(0,0,0,0.55)",
-                          filter: "drop-shadow(0 0 26px rgba(255,255,255,0.65))",
+                            "0 0 22px rgba(248,228,139,0.9), 0 0 40px rgba(248,228,139,0.7), 0 6px 20px rgba(0,0,0,0.55)",
+                          filter: "drop-shadow(0 0 26px rgba(248,228,139,0.65))",
                         }}
                       >
                         {ceremonyDayNumber.padStart(2, "0")}

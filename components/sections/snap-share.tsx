@@ -25,7 +25,8 @@ export function SnapShare() {
   const hashtags = [
     "#NathanielAndJasmin2026",
     "#NathanielJasminForever",
-    "#NathanielAndJasmin"
+    "#NathanielAndJasmin",
+    "#NATHJAStodaybutaLifetime"
   ]
   const allHashtagsText = hashtags.join(" ")
   const groomNickname = siteConfig.couple.groomNickname

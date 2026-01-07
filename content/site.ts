@@ -47,16 +47,56 @@ export const siteConfig = {
     note: "We kindly request our guests to dress in formal attire with a color of our motif."
   },
   narratives: {
-    groom: `The first time Mark saw Catherine, time seemed to slow down. It was an ordinary day that instantly became unforgettable: one smile, one hello, and suddenly his world had a new center. He didn't have the perfect words ready, but he knew he had met someone who felt like home.
+    groom: ` COMING SOON..`,
+    bride: `A Decade of Waiting
 
-Early conversations turned into late-night talks, sharing dreams, favorite meals, and whispered prayers for a future together. With every small adventure—coffee runs, long drives, quiet walks—Mark found himself choosing her over and over again. He loved how she laughed freely, how she listened with her whole heart, and how her faith steadied him.
+One ordinary day during Holy Week of 2013, while I was spending my vacation in our small town of Pandayan, a group of young men visited our home. Among them were Kuya Angka, our neighbor; Junjun; JemJem, my younger sister’s friend; and one unfamiliar face named Nathaniel.
 
-There were seasons of distance and long workdays, but every reunion reminded him why he stayed patient: because Catherine was worth every mile and every minute apart. When he finally knelt to ask for her hand, it wasn't a question of "if," only "when can we start forever?"`,
-    bride: `Catherine remembers the first time Mark said her name. It was gentle but sure, a kindness that made her feel both seen and safe. In that softness, she found a partner who met her with the same grace she prayed to give.
+In our town, visits like these were common, especially during long holidays when people from the city returned to spend time in the province. Every evening was filled with long conversations, stories of childhood, and shared laughter that lasted until dawn.
 
-Mark's steadiness won her heart: the way he showed up, even when schedules were tight, and how he always found lightness in the small things. He celebrated her wins, held space for her worries, and never hesitated to choose "us" in every decision.
+The day after their visit, I found myself looking through my digital camera, reliving photos from my college debut and my high school years. When some childhood friends arrived, I placed the camera on a chair outside while I greeted them. One of the boys picked it up and began taking photos of the plants around us.
 
-Now, as they prepare to say yes before God and the people they love most, Catherine is grateful for the patience, humor, and hope Mark brings to every day. She knows this next chapter is just the start of the love story they get to write together.`,
+Moments later, his face turned pale.
+
+He had accidentally deleted everything.
+
+All my photos, every memory since the day my eldest sister gave me that camera, were gone. I was frozen in shock. I had always been sentimental, believing that important moments in life should be captured and kept forever. He apologized again and again, clearly shaken by what he had done, but it took time for the loss to truly sink in.
+
+Later that night, I received a message that read, “I’m sorry for deleting all your photos. I’m very sorry.”
+
+It was from Nathaniel, who introduced himself as Natnat. Little did I know that mistake would quietly begin our love story.
+
+After that incident, their visits became more frequent. Our home was soon filled with conversations in the morning, in the afternoon, and late into the night. Little by little, Nathaniel became familiar to me, and eventually, he confessed his feelings.
+
+I turned him down the first time, telling him we were too young. The second time, I asked him to wait or to find someone else if he could not. For a while, we lost contact. He worked in Cavite after graduating from high school, while I continued my first year in college.
+
+In November of 2014, he reached out again and began courting me for the third time. He told me he was planning to take the entrance exam at the Polytechnic University of the Philippines. I gave him a condition. If he passed, I would allow him to court me again. If he did not, we would stop communicating completely.
+
+In April of 2015, he sent me a message saying, “So pano ba yan? Pumasa ako sa PUPCET.”
+
+I smiled, but I gave him another condition. I told him that if he could wait for me until after my college graduation, then I would finally give him my answer. To my surprise, he accepted without hesitation.
+
+We continued our college lives, each carrying our own struggles. I graduated in 2018, while he was in his fourth year. Misunderstandings grew, and the long years of waiting became exhausting for both of us, especially as I prepared for the Nurse Licensure Examination.
+
+I gave him one final condition. If I passed the board exam, I would give him my yes. If I failed, we would become strangers.
+
+Waiting was never easy. Stress, fear, and distance tested us deeply. I became sensitive, and he grew tired of waiting. Still, beneath all the uncertainty was a quiet hope. We could not allow the years of waiting to be wasted.
+
+In November of 2018, I received the results. I had passed the Nurse Licensure Examination. I was overwhelmed with joy, knowing that my family’s sacrifices had finally paid off. More than that, I was happy because I could now keep my promise to Nathaniel.
+
+December of 2018 marked four years of his waiting. What he did not know was that I had been waiting too, because somewhere along the way, I had already fallen in love with him.
+
+During Christmas week, he formally courted my family. He spoke to my parents, my older siblings, and the rest of my brothers and sisters. There were eleven of us in total, and he patiently shared his intentions with each one. By New Year’s Day of 2019, when everyone had returned to the province, he finally asked me.
+
+On the night of January 1, 2019, we sat together under our small kubo. We talked quietly and shared stories, both of us unable to hide the excitement in our eyes. I was nervous, knowing that the question I had avoided for years was finally coming.
+
+He took out his phone and showed me the screen. It asked, “Will you be my girlfriend?”
+
+I wanted to shout with happiness, but the house was asleep. So I whispered YES, raised both my thumbs up, and finally said the words I had kept in my heart for so long. “I LOVE YOU.”
+
+That moment felt greater than my college graduation and even greater than passing the board exam.
+
+We never imagined that the accidental deletion of digital memories would lead us to a lifetime of creating new ones together. Truly, God moves in mysterious ways.`,
   },
   colors: {
     primary: "#6A4F82",
