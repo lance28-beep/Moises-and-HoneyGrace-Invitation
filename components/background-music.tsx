@@ -12,8 +12,7 @@ const BackgroundMusic = () => {
 
     // Try to play immediately on page load
     const tryAutoplay = () => {
-      audioEl.play().catch((error) => {
-        console.log("Autoplay blocked, waiting for user interaction:", error)
+      audioEl.play().catch(() => {
         // If autoplay fails, set up user interaction listeners
         setupUserInteraction()
       })
@@ -23,8 +22,8 @@ const BackgroundMusic = () => {
       audioEl.play().then(() => {
         document.removeEventListener("click", handleUserInteraction)
         document.removeEventListener("touchstart", handleUserInteraction)
-      }).catch((error) => {
-        console.log("Playback blocked:", error)
+      }).catch(() => {
+        // Playback blocked - silently handle
       })
     }
 
@@ -47,7 +46,7 @@ const BackgroundMusic = () => {
     <audio
       ref={audioRef}
       // Use an encoded URI to avoid issues with spaces/parentheses on some mobile browsers
-      src={encodeURI("/background_music/A Thousand Years - Christina Perri - Daniel Jang & AMoney violin cover.mp3")}
+      src={encodeURI("/background_music/Dilaw (from My Love Will Make You Disappear) - Maki (Official Lyric Video).mp3")}
       loop
       preload="auto"
       // playsInline helps iOS treat this as inline media rather than requiring fullscreen behavior

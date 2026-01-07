@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from "react"
 import { Section } from "@/components/section"
-import { siteConfig } from "@/content/site"
 import Stack from "@/components/stack"
 import { motion } from "motion/react"
 import { Cormorant_Garamond } from "next/font/google"
@@ -13,38 +11,29 @@ const cormorant = Cormorant_Garamond({
 })
 
 export function Narrative() {
-  const { brideNickname, groomNickname } = siteConfig.couple
-  const storyTabs = [
-    { id: "bride", label: `${brideNickname}'s Story`, subtitle: "Her side of forever" },
-    { id: "groom", label: `${groomNickname}'s Story`, subtitle: "His side of forever" },
-  ] as const
+  // Single unified story
+  const storyText = `We met in 2012 at the University of Cebu – Main Campus, not through grand gestures or perfect timing, but simply as classmates—two Civil Engineering students sharing long school days, deadlines, and quiet moments in between. Back then, it didn't feel extraordinary. It just felt natural, like something meant to be.
 
-  type StoryTabId = (typeof storyTabs)[number]["id"]
-  const [activeStory, setActiveStory] = useState<StoryTabId>("bride")
-  const storyParagraphs =
-    siteConfig.narratives?.[activeStory]
-      ?.trim()
-      .split(/\n\s*\n/)
-      .filter(Boolean) ?? []
-  
-  const coupleDisplayName = `${groomNickname} & ${brideNickname}`
+Love didn't rush in. It unfolded gently. We found it in the comfort of being together, in shared laughter, and in the simple joy of doing ordinary things side by side. Without realizing it, we became partners in crime—supporting one another, easing each other's worries, and choosing each other every single day.
+
+We faced challenges early on—school pressures, projects, and exhaustion—and as life moved forward, those challenges grew into work stress and real-world responsibilities. Yet one thing never changed. Whatever came our way, we faced it together.
+
+Now, as we look ahead, we dream of building our own family, facing life hand in hand, and remaining the same team we have always been since our university days. Because at the heart of our story, then and now, is a simple truth:
+
+we grow, struggle, and succeed as one.
+
+And with love as our foundation, we choose forever—hand in hand, heart to heart.`
+
+  const storyParagraphs = storyText
+    .trim()
+    .split(/\n\s*\n/)
+    .filter(Boolean)
 
   return (
     <Section
       id="narrative"
-      className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-[#187153]"
+      className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#F4F1EA] via-[#FAF9F5] to-[#F4F1EA]"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Background image */}
-        <img
-          src="/Details/newBackground.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        />
-      </div>
-
       {/* Section Title - Aligned with other sections */}
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 px-3 sm:px-4">
         <motion.div 
@@ -55,27 +44,27 @@ export function Narrative() {
           transition={{ duration: 0.6 }}
         >
           <p
-            className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-white mb-2`}
-            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
+            className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#7E6153] mb-2`}
+            style={{ textShadow: "0 2px 10px rgba(126,97,83,0.3)" }}
           >
-            {coupleDisplayName}&apos;s Love Story
+            Our Journey Together
           </p>
           <h2
-            className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4"
-            style={{ textShadow: "0 4px 18px rgba(0,0,0,0.9)" }}
+            className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#7E6153] mb-1.5 sm:mb-3 md:mb-4"
+            style={{ textShadow: "0 4px 18px rgba(126,97,83,0.4)" }}
           >
-            When Two Stories Became One
+            From Classmates to Forever
           </h2>
 
           {/* Decorative flourish */}
           <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#327B72]/80 to-transparent" />
+            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#7E6153]/50 to-transparent" />
             <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-white/80"
+              className="w-1.5 h-1.5 rounded-full bg-[#7E6153]/70"
               animate={{ scale: [1, 1.3, 1], rotate: [0, 8, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#327B72]/80 to-transparent" />
+            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#7E6153]/50 to-transparent" />
           </div>
         </motion.div>
       </div>
@@ -96,10 +85,10 @@ export function Narrative() {
           {/* Interactive Stack Component - Center */}
           <div className="flex justify-center">
             <div className="relative">
-              {/* Enhanced glow effect with green motif */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#327B72]/35 via-[#A98634]/24 to-[#FACBC5]/32 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#187153]/30 via-transparent to-[#327B72]/26 rounded-full blur-2xl -z-10 w-full h-full max-w-sm" />
-              <div className="absolute inset-0 bg-gradient-to-bl from-[#327B72]/24 via-transparent to-[#A98634]/22 rounded-full blur-xl -z-10 w-full h-full max-w-sm" />
+              {/* Enhanced glow effect with warm tones */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#CBB9A3]/35 via-[#A98634]/24 to-[#FACBC5]/32 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#7E6153]/30 via-transparent to-[#CBB9A3]/26 rounded-full blur-2xl -z-10 w-full h-full max-w-sm" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-[#CBB9A3]/24 via-transparent to-[#A98634]/22 rounded-full blur-xl -z-10 w-full h-full max-w-sm" />
 
               <Stack
                 randomRotation={true}
@@ -107,25 +96,25 @@ export function Narrative() {
                 sendToBackOnClick={false}
                 cardDimensions={{ width: 240, height: 280 }}
                 cardsData={[
-                  { id: 1, img: "/mobile-background/couple (1).jpg" },
-                  { id: 2, img: "/mobile-background/couple (2).jpg" },
-                  { id: 3, img: "/mobile-background/couple (3).jpg" },
-                  { id: 4, img: "/mobile-background/couple (4).jpg" },
-                  { id: 5, img: "/mobile-background/couple (6).jpg" },
-                  { id: 6, img: "/mobile-background/couple (5).jpg" },
+                  { id: 1, img: "/mobile-background/couple (1).webp" },
+                  { id: 2, img: "/mobile-background/couple (2).webp" },
+                  { id: 3, img: "/mobile-background/couple (3).webp" },
+                  { id: 4, img: "/mobile-background/couple (5).webp" },
+                  { id: 5, img: "/mobile-background/couple (6).webp" },
+                  { id: 6, img: "/mobile-background/couple (4).webp" },
 
                 ]}
                 animationConfig={{ stiffness: 260, damping: 20 }}
               />
 
               <motion.p 
-                className="text-center text-xs md:text-sm text-white mt-4 font-sans font-medium tracking-wide"
+                className="text-center text-xs md:text-sm text-[#7E6153] mt-4 font-sans font-medium tracking-wide"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1 }}
               >
-                <span className="text-[#FACBC5]">✨</span> Drag to explore our moments <span className="text-[#FACBC5]">✨</span>
+                <span className="text-[#A98634]">✨</span> Drag to explore our moments <span className="text-[#A98634]">✨</span>
               </motion.p>
             </div>
           </div>
@@ -143,35 +132,9 @@ export function Narrative() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="flex flex-col items-center text-center gap-3 md:gap-5 mb-8 md:mb-12">
-            <p className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm text-white/90 tracking-[0.16em] uppercase`}>
-              Two hearts, one promise
+            <p className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm text-[#7E6153]/90 tracking-[0.16em] uppercase`}>
+              A story of love, growth, and forever
             </p>
-            {/* Tabs - compact single row with gentle wrapping on very small screens */}
-            <div className="relative inline-flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 sm:gap-x-2 sm:gap-y-1 rounded-full border border-white/30 bg-white/20 backdrop-blur-sm px-1.5 py-1.5 max-w-full shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
-              {storyTabs.map((tab) => {
-                const isActive = tab.id === activeStory
-                return (
-                  <motion.button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setActiveStory(tab.id)}
-                    className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[0.7rem] sm:text-xs md:text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/50 focus-visible:ring-offset-[#187153]/40 ${
-                      isActive
-                        ? "bg-white shadow-xl shadow-white/25 border border-white/70"
-                        : "text-white/80 hover:text-white border border-transparent"
-                    }`}
-                    aria-pressed={isActive}
-                    aria-controls="story-panel"
-                    whileTap={{ scale: 0.96 }}
-                  >
-                    <span className={`block leading-snug ${isActive ? "text-[#525E2C]" : ""}`}>{tab.label}</span>
-                    <span className={`text-[0.55rem] sm:text-[0.6rem] uppercase tracking-[0.16em] font-normal ${isActive ? "text-[#525E2C]" : "text-white/70"}`}>
-                      {tab.subtitle}
-                    </span>
-                  </motion.button>
-                )
-              })}
-            </div>
           </div>
 
           <div id="story-panel" className="space-y-4 md:space-y-6" aria-live="polite">
@@ -186,14 +149,14 @@ export function Narrative() {
               >
                 {/* First paragraph with drop cap */}
                 {index === 0 ? (
-                  <p className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light pl-3 md:pl-6">
-                    <span className="float-left text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-none mr-2 mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+                  <p className="text-sm md:text-base leading-relaxed text-[#7E6153] text-pretty font-sans font-light pl-3 md:pl-6">
+                    <span className="float-left text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-[#7E6153] leading-none mr-2 mt-1 drop-shadow-[0_4px_16px_rgba(126,97,83,0.3)]">
                       {paragraph.charAt(0)}
                     </span>
                     {paragraph.slice(1)}
                   </p>
                 ) : (
-                  <p className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light pl-3 md:pl-6">
+                  <p className="text-sm md:text-base leading-relaxed text-[#7E6153] text-pretty font-sans font-light pl-3 md:pl-6">
                     {paragraph}
                   </p>
                 )}
@@ -209,9 +172,9 @@ export function Narrative() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            {/* Decorative divider with green motif */}
+            {/* Decorative divider with warm tones */}
             <div className="flex items-center justify-center gap-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#327B72]/70 to-[#FACBC5]/65" />
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#CBB9A3]/70 to-[#FACBC5]/65" />
               <motion.div
                 animate={{
                   rotate: [0, 360],
@@ -222,21 +185,21 @@ export function Narrative() {
                   ease: "linear",
                 }}
               >
-                <svg className="w-5 h-5 text-white/85" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#7E6153]/85" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
                 </svg>
               </motion.div>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#327B72]/70 to-[#FACBC5]/65" />
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#CBB9A3]/70 to-[#FACBC5]/65" />
             </div>
 
-            {/* Enhanced CTA Button with green motif */}
+            {/* Enhanced CTA Button with warm tones */}
             <div className="flex justify-center">
               <motion.a
                 href="#guest-list"
-                className="group relative w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-[#187153] font-sans font-bold text-sm sm:text-base md:text-lg rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl border-2 border-white/30 hover:border-white/50"
+                className="group relative w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-white font-sans font-bold text-sm sm:text-base md:text-lg rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl border-2 border-[#A38D78]/30 hover:border-[#A38D78]/50"
                 style={{ 
-                  backgroundImage: "linear-gradient(135deg, #FACBC5, #E5D0CD)",
-                  boxShadow: "0 10px 40px rgba(0,0,0,0.35), 0 4px 12px rgba(250,203,197,0.45)"
+                  backgroundColor: "#A38D78",
+                  boxShadow: "0 10px 40px rgba(163,141,120,0.35), 0 4px 12px rgba(163,141,120,0.45)"
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -244,17 +207,17 @@ export function Narrative() {
                 whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #E5D0CD, #FACBC5)";
-                  e.currentTarget.style.boxShadow = "0 16px 55px rgba(0,0,0,0.45), 0 6px 18px rgba(250,203,197,0.6)";
+                  e.currentTarget.style.backgroundColor = "#A38D78";
+                  e.currentTarget.style.boxShadow = "0 16px 55px rgba(163,141,120,0.45), 0 6px 18px rgba(163,141,120,0.6)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #FACBC5, #E5D0CD)";
-                  e.currentTarget.style.boxShadow = "0 10px 40px rgba(0,0,0,0.35), 0 4px 12px rgba(250,203,197,0.45)";
+                  e.currentTarget.style.backgroundColor = "#A38D78";
+                  e.currentTarget.style.boxShadow = "0 10px 40px rgba(163,141,120,0.35), 0 4px 12px rgba(163,141,120,0.45)";
                 }}
               >
-                {/* Pulsing glow effect with green accent */}
+                {/* Pulsing glow effect */}
                 <motion.div 
-                  className="absolute inset-0 bg-[#FACBC5]/40 rounded-[2rem] blur-2xl"
+                  className="absolute inset-0 bg-[#A38D78]/40 rounded-[2rem] blur-2xl"
                   animate={{
                     opacity: [0.4, 0.7, 0.4],
                     scale: [1, 1.1, 1],
@@ -267,7 +230,7 @@ export function Narrative() {
                 />
                 {/* Secondary glow with soft accent */}
                 <motion.div 
-                  className="absolute inset-0 bg-[#A98634]/26 rounded-[2rem] blur-xl"
+                  className="absolute inset-0 bg-[#A38D78]/26 rounded-[2rem] blur-xl"
                   animate={{
                     opacity: [0.2, 0.4, 0.2],
                     scale: [1, 1.15, 1],
@@ -307,7 +270,7 @@ export function Narrative() {
                       ease: "easeInOut",
                     }}
                   >
-                    <svg className="w-3 h-3 text-[#187153]/70" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 text-white/70" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                     </svg>
                   </motion.div>
@@ -346,10 +309,10 @@ export function Narrative() {
                 </motion.div>
                 
                 {/* Button content */}
-                <span className="relative z-10 tracking-wide uppercase inline-flex items-center gap-3 font-bold text-[#187153]">
+                <span className="relative z-10 tracking-wide uppercase inline-flex items-center gap-3 font-bold text-white">
                   Join Our Celebration
                   <motion.svg 
-                    className="w-5 h-5 md:w-6 md:h-6 text-[#187153]" 
+                    className="w-5 h-5 md:w-6 md:h-6 text-white" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"

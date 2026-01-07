@@ -12,8 +12,6 @@ export interface Message {
 // GET: Fetch all messages from Google Sheets
 export async function GET() {
   try {
-    console.log('Fetching messages from:', MESSAGES_SCRIPT_URL)
-    
     const response = await fetch(MESSAGES_SCRIPT_URL, {
       method: 'GET',
       headers: {
@@ -23,18 +21,21 @@ export async function GET() {
     })
 
     if (!response.ok) {
+      if (process.env.NODE_ENV === 'development') {
       console.error('Failed to fetch from Google Script:', response.status, response.statusText)
+      }
       throw new Error('Failed to fetch messages')
     }
 
     const data = await response.json()
-    console.log('Raw data from Google Script:', data)
 
     // Handle various response formats from Google Sheets
     const possibleRows = (data && (data.GoogleSheetData ?? data.rows ?? data.values ?? data)) as unknown
     
     if (!Array.isArray(possibleRows)) {
-      console.warn("Unexpected messages payload shape; expected an array", data)
+      if (process.env.NODE_ENV === 'development') {
+        console.warn("Unexpected messages payload shape; expected an array")
+      }
       return NextResponse.json([], { status: 200 })
     }
 
@@ -48,7 +49,9 @@ export async function GET() {
     const [header, ...entries] = rows
     
     if (!Array.isArray(header)) {
-      console.warn("Unexpected header row format", header)
+      if (process.env.NODE_ENV === 'development') {
+        console.warn("Unexpected header row format")
+      }
       return NextResponse.json([], { status: 200 })
     }
 
@@ -71,10 +74,11 @@ export async function GET() {
       }))
       .filter((m) => m.name || m.message || m.timestamp)
     
-    console.log('Parsed messages:', parsed.length)
     return NextResponse.json(parsed, { status: 200 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error('Error fetching messages:', error)
+    }
     return NextResponse.json(
       { error: 'Failed to fetch messages', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
@@ -117,7 +121,9 @@ export async function POST(request: NextRequest) {
     const data = await response.json()
     return NextResponse.json(data, { status: 201 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error("Error posting message:", error)
+    }
     return NextResponse.json({ error: "Failed to post message" }, { status: 500 })
   }
 }

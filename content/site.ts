@@ -1,14 +1,15 @@
 export const siteConfig = {
   couple: {
-    bride: "Jasmin P. Rosima",
-    brideNickname: "Jasmin",
-    groom: "Nathaniel L Villaganas",
-    groomNickname: "Nathaniel",
+    bride: "Honey Grace B. Catubig",
+    brideNickname: "Honey",
+    groom: "Moises T. Desabille Jr.",
+    groomNickname: "Moises",
   },
   wedding: {
-    date: "March 29, 2026",
-    time: "3:00 PM",
-    venue: "Casa Joros Mendenilla Resort Catanauan Quezon / Casa Joros Pavilion",
+    date: "February 24, 2026",
+    time: "2:30 PM",
+    venue:
+      "Archdiocesan Shrine of Sta. Teresa De Avila Parish at Poblacion, Talisay City, Cebu / Bayfront Hotel Cebu North Reclamation, Kaohsiung St., Cebu City",
     tagline: "are getting married!",
     theme: "Purple & Sage Motif",
     motif: "#6A4F82, #B9AACB, #A8AF8D, #F4F4F4, #5B6B3C",
@@ -19,18 +20,20 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "Casa Joros Mendenilla Resort Catanauan Quezon",
-    venue: "Casa Joros Mendenilla Resort Catanauan Quezon",
-    date: "March 29, 2026",
-    day: "Sunday",
-    time: "3:00 PM",
-    entourageTime: "2:30 PM",
-    guestsTime: "2:30 PM",
+    location:
+      "Archdiocesan Shrine of Sta. Teresa De Avila Parish at Poblacion, Talisay City, Cebu",
+    venue:
+      "Archdiocesan Shrine of Sta. Teresa De Avila Parish at Poblacion, Talisay City, Cebu",
+    date: "February 24, 2026",
+    day: "Tuesday",
+    time: "2:30 PM",
+    entourageTime: "2:00 PM",
+    guestsTime: "2:00 PM",
   },
   reception: {
-    location: "Casa Joros Pavilion, Catanauan Quezon",
-    venue: "Casa Joros Pavilion",
-    date: "March 29, 2026",
+    location: "Bayfront Hotel Cebu North Reclamation, Kaohsiung St., Cebu City",
+    venue: "Bayfront Hotel Cebu North Reclamation",
+    date: "February 24, 2026",
     time: "Reception to follow",
   },
   dressCode: {
@@ -103,8 +106,8 @@ We never imagined that the accidental deletion of digital memories would lead us
     secondary: "#B9AACB",
   },
   snapShare: {
-    googleDriveLink: "https://drive.google.com/drive/folders/1Km13XQfthVxvD-owEnD7ajGjhn7ylT3A?usp=sharing",
-    hashtag: "#NathanielAndJasmin2026",
+    googleDriveLink: "https://drive.google.com/drive/folders/1L_h4YM74z2-nFTxLaWDX7uDlGU70qAPY?usp=sharing",
+    hashtag: "#MoisesAndHoney2026",
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

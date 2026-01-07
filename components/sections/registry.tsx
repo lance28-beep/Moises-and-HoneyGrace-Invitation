@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Section } from "@/components/section"
-import { Building2, Smartphone } from "lucide-react"
+import { Smartphone } from "lucide-react"
 
 const paymentMethods = [
   {
@@ -11,15 +11,7 @@ const paymentMethods = [
     description: "Mobile payment via GCASH",
     accent: "from-[#007BFF] to-[#0056B3]",
     Icon: Smartphone,
-    qrSrc: "/QR/GCASH.png",
-  },
-  {
-    id: "landbank",
-    label: "Land Bank",
-    description: "Bank transfer via Land Bank",
-    accent: "from-[#A8AF8D] to-[#5B6B3C]",
-    Icon: Building2,
-    qrSrc: "/QR/LANDBANK QR.png",
+    qrSrc: "/QR/gcashnew.png",
   },
 ] as const
 
@@ -57,7 +49,8 @@ export function Registry() {
         <div className="relative bg-[#F4F4F4]/95 backdrop-blur-md border border-[#B9AACB]/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(106,79,130,0.3)] p-4 sm:p-6 md:p-8 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#B9AACB]/20 via-transparent to-[#6A4F82]/10 pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="relative z-10 flex justify-center">
+            <div className="max-w-md w-full">
             {paymentMethods.map((paymentMethod) => (
               <div
                 key={paymentMethod.id}
@@ -77,11 +70,12 @@ export function Registry() {
                     />
                   </div>
                   <p className="text-sm sm:text-base text-[#6A4F82] max-w-md">
-                    Scan the QR code to make a {paymentMethod.id === "gcash" ? "mobile payment" : "bank transfer"}.
+                    Scan the QR code to make a mobile payment.
                   </p>
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
 

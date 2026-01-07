@@ -41,10 +41,11 @@ export function GuestMessages({ guests = [] }: GuestMessagesProps) {
       }
       
       const data = await response.json()
-      console.log("Messages fetched:", data)
       setMessages(Array.isArray(data) ? data : [])
     } catch (error) {
+      if (process.env.NODE_ENV === 'development') {
       console.error("Error fetching messages:", error)
+      }
       setError("Failed to load messages")
     } finally {
       setIsLoading(false)

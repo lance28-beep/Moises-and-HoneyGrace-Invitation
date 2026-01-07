@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How do I RSVP?",
     answer:
-      `Please RSVP on or before ${siteConfig.details.rsvp.deadline} through the RSVP section on this invitation. Simply search for your name in the guest list, confirm your attendance, and let us know if you'll be bringing companions. We kindly ask for your response to help us prepare for the big day.`,
+      `Please RSVP through the RSVP section on this invitation. Simply search for your name in the guest list, confirm your attendance, and let us know if you'll be bringing companions. We kindly ask for your response to help us prepare for the big day.`,
   },
   {
     question: "Can I bring a plus one or additional guests?",
@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there a dress code?",
     answer:
-      `Yes! We kindly request our guests to dress in formal attire matching our wedding colors. Please see the Attire section in Details for specific guidelines:\n\nPrincipal Sponsors:\n• Male: Barong, Black Pants and Leather Shoes\n• Female: Shades of Emerald Green, Teal, or Blush Pink Gown\n\nWedding Guests:\n• Formal or Semi Formal attire\n• We encourage you to dress according to our wedding colors to help create a soft, elegant romantic celebration.`,
+      `Yes! We kindly request our guests to dress in formal attire matching our wedding colors. Please see the Attire section in Details for specific guidelines:\n\nPrincipal Sponsors:\n• Gentlemen: Barong Tagalog: paired with black shoes and slacks\n• Ladies: Modern Filipiniana Dress - long Filipiniana dress in any shades of the color palette (#967A6D, #AA917D, #CFBBA2, #E0CFC1, #EFEFED)\n\nWedding Guests:\n• Gentlemen: Long Sleeves polo following the color palette and pants\n• Ladies: Preferably dress in any shades of our color palette strictly no wearing of white or cream (#99796D, #AA917D, #CFBBA2, #E1CFC1)\n• We encourage you to dress according to our wedding colors to help create a soft, elegant romantic celebration.`,
   },
   {
     question: "Will there be assigned seating?",
@@ -89,15 +89,20 @@ export function FAQ() {
   return (
     <Section
       id="faq"
-      className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-[#187153]"
+      className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#F4F1EA] via-[#FAF9F5] to-[#F4F1EA]"
     >
-      {/* Background image - matching gallery */}
+      {/* Background image - same as gallery */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img
-          src="/Details/newBackground.jpg"
+          src="/Details/Beige Forest Wallpaper.jpeg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        {/* Overlay */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{ backgroundColor: "rgba(244, 241, 234, 0.7)" }}
         />
       </div>
 
@@ -105,32 +110,38 @@ export function FAQ() {
       <div className="relative z-30 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
         {/* Small label */}
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-white mb-2`}
-          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.75)" }}
+          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#7E6153] mb-2`}
+          style={{ textShadow: "0 2px 10px rgba(126,97,83,0.3)" }}
         >
           Questions & Answers
         </p>
 
         <h2
-          className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4"
-          style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
+          className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#7E6153] mb-1.5 sm:mb-3 md:mb-4"
+          style={{ textShadow: "0 4px 18px rgba(126,97,83,0.4)" }}
         >
           Frequently Asked Questions
         </h2>
 
-        {/* Simple divider */}
+        <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-[#7E6153]/90 max-w-xl mx-auto leading-relaxed px-2 mb-3 sm:mb-4">
+          Everything you need to know about our special day.
+        </p>
+
+        {/* Decorative element below subtitle - matching gallery style */}
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#327B72]/80 to-transparent" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#327B72]/80 to-transparent" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#CBB9A3]/60" />
+          <div className="w-1.5 h-1.5 bg-[#A98634]/80 rounded-full" />
+          <div className="w-1.5 h-1.5 bg-[#F5F5F5]/80 rounded-full" />
+          <div className="w-1.5 h-1.5 bg-[#CBB9A3]/80 rounded-full" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#CBB9A3]/60" />
         </div>
       </div>
 
       {/* FAQ content */}
       <div className="relative z-30 max-w-4xl mx-auto px-3 sm:px-5">
         {/* Main card */}
-        <div className="relative bg-[#F4F4F4]/95 backdrop-blur-md border border-[#327B72]/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(24,113,83,0.3)] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#327B72]/10 via-transparent to-[#187153]/5 pointer-events-none" />
+        <div className="relative bg-white/95 backdrop-blur-md border border-[#A38D78]/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-[0_20px_60px_rgba(163,141,120,0.3)] overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#A38D78]/10 via-transparent to-[#99796D]/5 pointer-events-none" />
           
           {/* FAQ items */}
           <div className="relative p-2.5 sm:p-4 md:p-5 lg:p-6">
@@ -141,20 +152,20 @@ export function FAQ() {
                 return (
                   <div
                     key={index}
-                    className="rounded-lg sm:rounded-xl border border-[#327B72]/40 bg-white/50 hover:border-[#187153]/60 hover:bg-white/70 transition-all duration-300 overflow-hidden shadow-sm"
+                    className="rounded-lg sm:rounded-xl border border-[#A38D78]/40 bg-white/50 hover:border-[#99796D]/60 hover:bg-white/70 transition-all duration-300 overflow-hidden shadow-sm"
                   >
                     <button
                       onClick={() => toggleItem(index)}
-                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#187153]/50 focus-visible:ring-offset-2 transition-colors"
+                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#99796D]/50 focus-visible:ring-offset-2 transition-colors"
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
-                      <span className={`${cormorant.className} font-semibold text-[#187153] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#327B72]`}>
+                      <span className={`${cormorant.className} font-semibold text-[#7E6153] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#99796D]`}>
                         {item.question}
                       </span>
                       <ChevronDown
                         size={18}
-                        className={`text-[#187153]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#187153]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
+                        className={`text-[#A38D78]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#99796D]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
                         aria-hidden
                       />
                     </button>
@@ -167,13 +178,13 @@ export function FAQ() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-white/30 border-t border-[#327B72]/40">
+                        <div className="px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-white/30 border-t border-[#A38D78]/40">
                           {item.answer.includes("[RSVP_LINK]") ? (
-                            <p className={`${cormorant.className} text-[#37413A] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
+                            <p className={`${cormorant.className} text-[#7E6153] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
                               {item.answer.split("[RSVP_LINK]")[0]}
                               <a 
                                 href="#guest-list" 
-                                className="text-[#187153] underline font-bold hover:text-[#327B72] transition-colors"
+                                className="text-[#99796D] underline font-bold hover:text-[#A38D78] transition-colors"
                                 onClick={(e) => {
                                   e.preventDefault()
                                   document.getElementById('guest-list')?.scrollIntoView({ behavior: 'smooth' })
@@ -184,7 +195,7 @@ export function FAQ() {
                               {item.answer.split("[/RSVP_LINK]")[1]}
                             </p>
                           ) : (
-                            <p className={`${cormorant.className} text-[#37413A] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
+                            <p className={`${cormorant.className} text-[#7E6153] font-medium leading-relaxed sm:leading-loose text-xs sm:text-sm md:text-base lg:text-lg whitespace-pre-line tracking-wide`}>
                               {item.answer}
                             </p>
                           )}

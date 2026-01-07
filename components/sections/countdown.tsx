@@ -183,17 +183,17 @@ export function Countdown() {
         >
           <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] opacity-90">
             <Image
-              src="/monogram/monograam.png"
-              alt={`${brideNickname} & ${groomNickname} Monogram`}
+              src="/monogram/monogram.png"
+              alt={`${groomNickname} & ${brideNickname} Monogram`}
               fill
               className="object-contain"
               priority={false}
               style={{
-                filter: "brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(1200%) hue-rotate(5deg) brightness(110%) contrast(95%) drop-shadow(0 0 8px rgba(248, 228, 139, 0.4)) drop-shadow(0 0 16px rgba(248, 228, 139, 0.3)) drop-shadow(0 0 24px rgba(248, 228, 139, 0.2))",
+                filter: "brightness(0) saturate(100%) invert(100%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.2))",
               }}
             />
             {/* Glow effect behind monogram */}
-            <div className="absolute inset-0 blur-3xl bg-[#F8E48B]/20 -z-10 scale-125" />
+            <div className="absolute inset-0 blur-3xl bg-white/20 -z-10 scale-125" />
           </div>
         </motion.div>
       </div>
@@ -277,15 +277,15 @@ export function Countdown() {
                     <div className="relative flex items-center justify-center px-3 sm:px-4 md:px-5">
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-[#F8E48B]/40 via-[#F8E48B]/25 to-transparent blur-[30px] opacity-85"
+                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-white/40 via-white/25 to-transparent blur-[30px] opacity-85"
                       />
                       <span
                         className={`${cinzel.className} relative text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6rem] font-bold leading-none tracking-wider`}
                         style={{
-                          color: "#F8E48B",
+                          color: "#FFFFFF",
                           textShadow:
-                            "0 0 22px rgba(248,228,139,0.9), 0 0 40px rgba(248,228,139,0.7), 0 6px 20px rgba(0,0,0,0.55)",
-                          filter: "drop-shadow(0 0 26px rgba(248,228,139,0.65))",
+                            "0 0 22px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 6px 20px rgba(0,0,0,0.55)",
+                          filter: "drop-shadow(0 0 26px rgba(255,255,255,0.65))",
                         }}
                       >
                         {ceremonyDayNumber.padStart(2, "0")}

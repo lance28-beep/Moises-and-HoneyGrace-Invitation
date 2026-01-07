@@ -16,8 +16,6 @@ export interface GuestRequest {
 // GET: Fetch all guest requests
 export async function GET() {
   try {
-    console.log('Fetching guest requests from:', GUEST_WISH_SCRIPT_URL)
-    
     const response = await fetch(GUEST_WISH_SCRIPT_URL, {
       method: 'GET',
       headers: {
@@ -26,12 +24,13 @@ export async function GET() {
     })
 
     if (!response.ok) {
+      if (process.env.NODE_ENV === 'development') {
       console.error('Failed to fetch from Google Script:', response.status, response.statusText)
+      }
       throw new Error('Failed to fetch guest requests')
     }
 
     const data = await response.json()
-    console.log('Raw data from Google Script:', data)
 
     // Helper to safely coerce any value to a trimmed string
     const safeString = (value: any): string => {
@@ -56,10 +55,11 @@ export async function GET() {
         })
       : []
     
-    console.log('Normalized guest requests:', normalizedData)
     return NextResponse.json(normalizedData, { status: 200 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error('Error fetching guest requests:', error)
+    }
     return NextResponse.json(
       { error: 'Failed to fetch guest requests', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
@@ -114,7 +114,9 @@ export async function POST(request: NextRequest) {
     const data = await response.json()
     return NextResponse.json(data, { status: 201 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error('Error adding guest request:', error)
+    }
     return NextResponse.json(
       { error: 'Failed to submit guest request' },
       { status: 500 }
@@ -161,7 +163,9 @@ export async function PUT(request: NextRequest) {
     const data = await response.json()
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error('Error updating guest request:', error)
+    }
     return NextResponse.json(
       { error: 'Failed to update guest request' },
       { status: 500 }
@@ -203,7 +207,9 @@ export async function DELETE(request: NextRequest) {
     const data = await response.json()
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
     console.error('Error deleting guest request:', error)
+    }
     return NextResponse.json(
       { error: 'Failed to delete guest request' },
       { status: 500 }

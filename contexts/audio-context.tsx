@@ -21,8 +21,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
   const resumeMusic = () => {
     if (audioRef.current && audioRef.current.paused) {
-      audioRef.current.play().catch((error) => {
-        console.log("Resume playback blocked:", error)
+      audioRef.current.play().catch(() => {
+        // Resume playback blocked - silently handle
       })
     }
   }

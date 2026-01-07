@@ -75,6 +75,22 @@ export default function Stack({
         ],
   )
 
+  // Generate deterministic random rotations based on card ID to avoid hydration mismatches
+  // Use a seeded pseudo-random function that produces the same result on server and client
+  const seededRandom = (seed: number): number => {
+    // Simple seeded random function that works consistently
+    const x = Math.sin(seed) * 10000
+    return x - Math.floor(x)
+  }
+
+  // Pre-calculate rotations for all cards (deterministic based on card ID)
+  const getRandomRotate = (cardId: number): number => {
+    if (!randomRotation) return 0
+    // Use card ID as seed for deterministic randomness
+    const seed = cardId * 0.618033988749895 // Golden ratio multiplier
+    return (seededRandom(seed) * 10) - 5 // Range: -5 to 5
+  }
+
   const sendToBack = (id: number) => {
     setCards((prev) => {
       const newCards = [...prev]
@@ -95,7 +111,8 @@ export default function Stack({
       }}
     >
       {cards.map((card, index) => {
-        const randomRotate = randomRotation ? Math.random() * 10 - 5 : 0
+        // Use deterministic rotation based on card ID (same on server and client)
+        const randomRotate = getRandomRotate(card.id)
 
         return (
           <CardRotate key={card.id} onSendToBack={() => sendToBack(card.id)} sensitivity={sensitivity}>
@@ -114,8 +131,8 @@ export default function Stack({
                 damping: animationConfig.damping,
               }}
               style={{
-                width: cardDimensions.width,
-                height: cardDimensions.height,
+                width: `${cardDimensions.width}px`,
+                height: `${cardDimensions.height}px`,
               }}
             >
               <img
