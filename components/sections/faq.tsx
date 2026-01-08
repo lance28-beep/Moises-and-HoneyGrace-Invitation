@@ -45,7 +45,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there a dress code?",
     answer:
-      `Yes! We kindly request our guests to dress in formal attire matching our wedding colors. Please see the Attire section in Details for specific guidelines:\n\nPrincipal Sponsors:\n• Gentlemen: Barong Tagalog: paired with black shoes and slacks\n• Ladies: Modern Filipiniana Dress - long Filipiniana dress in any shades of the color palette (#967A6D, #AA917D, #CFBBA2, #E0CFC1, #EFEFED)\n\nWedding Guests:\n• Gentlemen: Long Sleeves polo following the color palette and pants\n• Ladies: Preferably dress in any shades of our color palette strictly no wearing of white or cream (#99796D, #AA917D, #CFBBA2, #E1CFC1)\n• We encourage you to dress according to our wedding colors to help create a soft, elegant romantic celebration.`,
+      `Yes! We kindly request our guests to dress in formal attire matching our wedding colors. Please see the Attire section in Details for specific guidelines:\n\nPrincipal Sponsors:\n• Gentlemen: Barong Tagalog: paired with black shoes and slacks\n• Ladies: Modern Filipiniana Dress - Filipiniana dress in any shades of the color palette (#967A6D, #AA917D, #CFBBA2, #E0CFC1, #EFEFED)\n\nWedding Guests:\n• Gentlemen: Long Sleeves polo following the color palette and pants\n• Ladies: Preferably dress in any shades of our color palette strictly no wearing of white or cream (#99796D, #AA917D, #CFBBA2, #E1CFC1)\n• We encourage you to dress according to our wedding colors to help create a soft, elegant romantic celebration.`,
   },
   {
     question: "Will there be assigned seating?",

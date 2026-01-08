@@ -286,7 +286,7 @@ export function Details() {
                   <p className="text-[10px] sm:text-xs text-[#A38D78]/80 mb-2">Kindly align attire below.</p>
                   <div className="relative w-full aspect-[4/3] sm:aspect-[5/3] rounded-xl overflow-hidden border border-[#A38D78] bg-[#F5F5F5] mb-3">
                     <Image
-                      src="/Details/sponsors.png"
+                      src="/Details/sponsorsAttire.png"
                       alt="Principal sponsors attire guideline"
                       fill
                       className="object-contain"
@@ -299,7 +299,7 @@ export function Details() {
                       <span className="font-semibold">Gentlemen:</span> Barong Tagalog: paired with black shoes and slacks
                     </p>
                     <p className="text-[#A38D78]">
-                      <span className="font-semibold">Ladies:</span> Modern Filipiniana Dress - long Filipiniana dress in any shades of the color palette
+                      <span className="font-semibold">Ladies:</span> Modern Filipiniana Dress - Filipiniana dress in any shades of the color palette
                     </p>
                     <div className="pt-1">
                       <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#A38D78] mb-1">
